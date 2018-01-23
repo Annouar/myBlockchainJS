@@ -1,0 +1,14 @@
+{
+  "name": "myblockchain",
+  "version": "0.0.1",
+  "description": "Here is my JS version of a blockchain",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Annouar",
+  "license": "MIT",
+  "dependencies": {
+    "crypto-js": "^3.1.9-1"
+  }
+}
