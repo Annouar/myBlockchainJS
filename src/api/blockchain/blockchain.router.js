@@ -16,14 +16,14 @@ blockchainRouter.post('/api/blockchain/blocks', (req, res, next) => {
     log.info(`Trying to create new block with data '${data}'`);
 
     if (!data) {
-        log.error('Body parameter \'data\' is missing !');
-        return next(new errs.MissingParameterError('Body parameter \'data\' is missing !'));
+        log.error("Body parameter 'data' is missing !");
+        return next(new errs.MissingParameterError("Body parameter 'data' is missing !"));
     }
     if (typeof data !== 'string') {
-        log.error(`Invalid parameter. '${data}' found. Data must be string`)
+        log.error(`Invalid parameter. '${data}' found. Data must be string`);
         return next(new errs.InvalidArgumentError(`'data' parameter is invalid. '${data}' found. Data must be string`));
     }
-    
+
     const blockCreated = myBlockchain.generateNewBlock(data);
     log.info(`The block #${blockCreated.id} has been suscessfully created !`);
     log.debug(JSON.stringify(blockCreated, null, 4));
@@ -31,6 +31,6 @@ blockchainRouter.post('/api/blockchain/blocks', (req, res, next) => {
     res.status(201);
     res.send(blockCreated);
     return next();
-})
+});
 
 module.exports = blockchainRouter;

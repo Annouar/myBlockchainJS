@@ -4,4 +4,4 @@ const blockchainRouter = require('./blockchain').blockchainRouter;
 module.exports = {
     blockRouter,
     blockchainRouter
-}
+};

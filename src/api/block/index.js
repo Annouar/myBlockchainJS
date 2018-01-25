@@ -1,4 +1,4 @@
-const Block =  require('./block');
+const Block = require('./block');
 const blockRouter = require('./block.router');
 
 module.exports = {

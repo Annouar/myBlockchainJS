@@ -8,7 +8,7 @@ class Block {
      * @param {String} previousBlockHash String representing prvious block unique hash
      * @param {Object} data Data to be send
      */
-    constructor (id, timestamp, previousBlockHash, data) {
+    constructor(id, timestamp, previousBlockHash, data) {
         this.id = id;
         this.timestamp = timestamp;
         this.data = data;
@@ -20,19 +20,21 @@ class Block {
      * Check if the Block attributes are in a correct type
      * @returns {Boolean} Block attributes are ok
      */
-    isValidBlockStructure () {
-        return typeof this.id === 'number'
-            && typeof this.timestamp === 'number'
-            && typeof this.data === 'string'
-            && typeof this.previousBlockHash === 'string'
-            && typeof this.hash === 'string';
+    isValidBlockStructure() {
+        return (
+            typeof this.id === 'number' &&
+            typeof this.timestamp === 'number' &&
+            typeof this.data === 'string' &&
+            typeof this.previousBlockHash === 'string' &&
+            typeof this.hash === 'string'
+        );
     }
 
     /**
      * Generates the unique current Block hash
      * @returns {String} Hash represents the current block
      */
-    getBlockHash () {
+    getBlockHash() {
         return CryptoJS.SHA256(this.id + this.timestamp + this.data + this.previousBlockHash).toString();
     }
 }

@@ -5,6 +5,7 @@
   "main": "./src/server.js",
   "scripts": {
     "start": "node ./src/server.js | bunyan -o short",
+    "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Annouar",
@@ -16,5 +17,8 @@
     "restify-errors": "^5.0.0",
     "restify-logger": "^2.0.1",
     "restify-router": "^0.5.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.10.2"
   }
 }
